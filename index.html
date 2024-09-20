@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+
+    <!-- Impor script kamu di sini -->
+    <!-- Lampirkan `defer` jika pemanggilan dilakukan dalam <head> -->
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Bookshelf App</h1>
+    </header>
+
+    <main>
+      <div class="left">
+        <section>
+          <h2>Tambah Buku Baru</h2>
+          <form id="bookForm" data-testid="bookForm">
+            <div class="input-group-wrapper">
+              <div class="input-group">
+                <label for="bookFormTitle">Judul</label>
+                <input placeholder="Masukkan Judul Buku" id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" />
+              </div>
+              <div class="input-group">
+                <label for="bookFormAuthor">Penulis</label>
+                <input placeholder="Masukkan Penulis Buku" id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" />
+              </div>
+              <div class="input-group">
+                <label for="bookFormYear">Tahun</label>
+                <input placeholder="Masukkan Tahun Pembuatan Buku" id="bookFormYear" type="number" required data-testid="bookFormYearInput" />
+              </div>
+            </div>
+
+            <div class="submit-wrapper">
+              <div class="done-read-check">
+                <input
+                  id="bookFormIsComplete"
+                  type="checkbox"
+                  data-testid="bookFormIsCompleteCheckbox"
+                />
+                <label for="bookFormIsComplete">Selesai dibaca</label>
+              </div>
+              <button id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton">
+                Masukkan Buku ke rak&nbsp;<span>( Belum selesai dibaca )</span>
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div class="right">
+        <section>
+          <h2>Cari Buku</h2>
+          <form id="searchBook" data-testid="searchBookForm">
+            <div class="input-group">
+              <label for="searchBookTitle">Judul</label>
+              <input placeholder="Cari Judul Buku" id="searchBookTitle" type="search" data-testid="searchBookFormTitleInput" />
+            </div>
+            <button id="searchSubmit" type="submit" data-testid="searchBookFormSubmitButton">
+              Cari
+            </button>
+          </form>
+        </section>
+  
+        <section>
+          <h2>Belum selesai dibaca</h2>
+  
+          <div class="book-list-wrapper" id="incompleteBookList" data-testid="incompleteBookList">
+            <!-- 
+              Ini adalah struktur HTML untuk masing-masing buku.
+              Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+            -->
+            <article data-bookid="123123123" data-testid="bookItem">
+              <div class="top">
+                <h3 data-testid="bookItemTitle">Judul Buku 1</h3>
+                <!-- <button data-testid="bookItemIsCompleteButton">Selesai dibaca</button> -->
+              </div>
+              <div class="book-content">
+                <p data-testid="bookItemAuthor">
+                  <span>Penulis</span>
+                  Penulis Buku 1
+                </p>
+                <p data-testid="bookItemYear">
+                  <span>Tahun</span>
+                  2024
+                </p>
+                <div class="action-button">
+                  <button data-testid="bookItemDeleteButton">Hapus Buku</button>
+                  <button data-testid="bookItemEditButton">Edit Buku</button>
+                </div>
+                <button data-testid="bookItemIsCompleteButton">Selesai dibaca</button>
+              </div>
+            </article>
+          </div>
+        </section>
+  
+        <section>
+          <h2>Selesai dibaca</h2>
+  
+          <div class="book-list-wrapper" id="completeBookList" data-testid="completeBookList">
+            <!-- 
+              Ini adalah struktur HTML untuk masing-masing buku.
+              Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+            -->
+            <article data-bookid="456456456" data-testid="bookItem">
+              <div class="top">
+                <h3 data-testid="bookItemTitle">Judul Buku 2</h3>
+                <!-- <button data-testid="bookItemIsCompleteButton">Belum Selesai dibaca</button> -->
+              </div>
+              <div class="book-content">
+                <p data-testid="bookItemAuthor">
+                  <span>Penulis</span>
+                  Penulis Buku 2
+                </p>
+                <p data-testid="bookItemYear">
+                  <span>Tahun</span>
+                  2030
+                </p>
+                <div class="action-button">
+                  <button data-testid="bookItemDeleteButton">Hapus Buku</button>
+                  <button data-testid="bookItemEditButton">Edit Buku</button>
+                </div>
+                <button data-testid="bookItemIsCompleteButton">Belum Selesai dibaca</button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

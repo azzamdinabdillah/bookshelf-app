@@ -1,0 +1,332 @@
+/* Font Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Color Config */
+
+:root{
+    --primary-color: #299D91;
+    --secondary-color: #525256;
+    --default-black: #191919;
+    --black: #191D23;
+
+    --gray-01: #666;
+    /* --gray-02: #878787; */
+    --gray-02: #4B5768;
+    /* --gray-03: #9F9F9F; */
+    --gray-03: #D0D5DD;
+    --gray-05: #E8E8E8;
+    --gray-06: #F3F3F3;
+}
+
+/* End Color Config */
+
+/* Base Style */
+
+*{
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button, input{
+    outline: none;
+    border: none;
+}
+
+body{
+    background-color: #F4F5F7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* End Base Style */
+
+
+/* Component Style */
+
+input{
+    padding: 12px 16px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-03);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; 
+    background-color: transparent;
+    transition: .3s;
+}
+
+input:valid{
+    border: 1px solid #4DAF6E;
+}
+
+/* input:invalid{
+    border: 1.5px solid #E73D1C;
+} */
+
+input:focus, input:active{
+    border: 1px solid var(--gray-02);
+}
+
+input::placeholder{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--gray-01);
+    opacity: .6;
+}
+
+label{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; 
+    color: #191D23;
+}
+
+button{
+    border-radius: 8px;
+    background: var(--primary-color);
+    height: 48px;
+    padding: 16px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: white;
+}
+
+input[type='checkbox']{
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    padding: 0;
+    border-radius: 4px;
+    background-color: var(--gray-06);
+    transition: .5s;
+    cursor: pointer;
+    border: 1px solid var(--gray-03);
+    /* border: none; */
+}
+
+input[type='checkbox']:checked {
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' rx='2' fill='%23299D91'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.2703 5.25877C17.5876 5.59212 17.5746 6.1196 17.2412 6.43692L7.61162 15.6036C7.44717 15.7601 7.22597 15.8428 6.99916 15.8325C6.77236 15.8222 6.55958 15.7197 6.41003 15.5489L2.70633 11.3181C2.40318 10.9718 2.43815 10.4454 2.78444 10.1422C3.13073 9.83906 3.65721 9.87404 3.96036 10.2203L7.09178 13.7974L16.0921 5.22975C16.4255 4.91242 16.9529 4.92542 17.2703 5.25877Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    outline: none;
+}
+
+input[type='checkbox']:focus, input[type='checkbox']:active {
+    border: none;
+    outline: none;
+}
+
+/* End Component Style */
+
+
+/* Header Style */
+
+header h1{
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 32px; /* 80% */
+    /* letter-spacing: 3.2px; */
+    color: var(--primary-color);
+}
+
+/* End Header Style */
+
+/* Main Style */
+
+main{
+    display: flex;
+    gap: 60px;
+    max-width: 900px;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+main .left, main .right{
+    flex: 1;
+}
+
+main .right{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+main .left{
+    top: 40px;
+    position: sticky;
+}
+
+main .left section form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* #bookFormSubmit{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+} */
+
+section h2{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--primary-color);
+    /* text-align: center; */
+    margin-bottom: 20px;
+}
+
+.input-group-wrapper{
+    /* gap: 24px; */
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.done-read-check{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.done-read-check label{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: var(--black);
+}
+
+.submit-wrapper{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+main .right section:nth-child(1) form{
+    display: flex;
+    align-items: end;
+    gap: 10px;
+}
+
+main .right section:nth-child(1) form button{
+    width: 20%;
+}
+
+.book-list-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+article{
+    padding: 24px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 20px 25px 0px rgba(76, 103, 100, 0.10);
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+article .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(210, 210, 210, 0.25);
+    padding-bottom: 12px;
+}
+
+article .top button{
+    height: 34px;
+    width: fit-content;
+    /* width: 140px; */
+}
+
+article h3{
+    /* font-size: 16px; */
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    text-transform: capitalize;
+    color: var(--gray-02);
+}
+
+article p{
+    /* font-size: 20px; */
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+    text-transform: capitalize;
+    color: var(--default-black);
+    /* gap: 0px; */
+    display: flex;
+    flex-direction: column;
+}
+
+article p span{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--gray-03);
+}
+
+article .book-content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+article .action-button{
+    margin-top: 8px;
+    display: flex;
+    gap: 12px;
+    /* width: 50%; */
+}
+
+article .action-button button:nth-child(1){
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--primary-color);
+    order: -1;
+}
+
+/* End Main Style */
